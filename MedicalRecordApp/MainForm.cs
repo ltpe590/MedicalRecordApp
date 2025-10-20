@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedicalRecordApp.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,6 +56,12 @@ namespace MedicalRecordApp
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewPatientForm newForm = new NewPatientForm();
+            newForm.Show();
         }
     }
 }
