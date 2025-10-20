@@ -64,6 +64,7 @@
     <Compile Include="Controllers\LabResultController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\PrescriptionController.cs" />
+    <Compile Include="Controllers\ServicesRepository.cs" />
     <Compile Include="Controllers\SmartSuggestionController.cs" />
     <Compile Include="Controllers\VisitController.cs" />
     <Compile Include="MainForm.cs">
