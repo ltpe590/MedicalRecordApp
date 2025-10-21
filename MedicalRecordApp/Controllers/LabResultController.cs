@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient; // Add this
+
 
 namespace MedicalRecordApp.Controllers
 {
@@ -16,7 +18,7 @@ namespace MedicalRecordApp.Controllers
 
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
@@ -57,7 +59,7 @@ namespace MedicalRecordApp.Controllers
 
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
@@ -99,7 +101,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand("SELECT * FROM lab_results WHERE id = @id", conn);
@@ -136,7 +138,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd;
@@ -178,7 +180,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand("DELETE FROM lab_results WHERE id = @id", conn);
@@ -198,7 +200,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand("DELETE FROM lab_results WHERE visit_id = @visitId", conn);
@@ -220,7 +222,7 @@ namespace MedicalRecordApp.Controllers
 
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
@@ -255,7 +257,7 @@ namespace MedicalRecordApp.Controllers
 
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
@@ -297,7 +299,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM lab_results WHERE visit_id = @visitId", conn);
@@ -316,7 +318,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = DatabaseService.GetConnection())
+                using (MySqlConnection conn = ServicesRepository.GetConnection())
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
