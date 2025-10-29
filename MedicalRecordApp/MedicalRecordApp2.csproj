@@ -194,12 +194,12 @@
     <EmbeddedResource Include="Views\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DatabseFiles\lab_results.ibd" />
-    <None Include="DatabseFiles\patients.ibd" />
-    <None Include="DatabseFiles\prescriptions.ibd" />
-    <None Include="DatabseFiles\smart_suggestions.ibd" />
-    <None Include="DatabseFiles\users.ibd" />
-    <None Include="DatabseFiles\visits.ibd" />
+    <None Include="DatabaseFiles\lab_results.ibd" />
+    <None Include="DatabaseFiles\patients.ibd" />
+    <None Include="DatabaseFiles\prescriptions.ibd" />
+    <None Include="DatabaseFiles\smart_suggestions.ibd" />
+    <None Include="DatabaseFiles\users.ibd" />
+    <None Include="DatabaseFiles\visits.ibd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
