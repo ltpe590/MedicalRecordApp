@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalRecordApp2", "MedicalRecordApp\MedicalRecordApp2.csproj", "{9DDAED51-8A78-482C-99DD-4BDE5129C794}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalRecordApp3", "MedicalRecordApp\MedicalRecordApp3.csproj", "{9DDAED51-8A78-482C-99DD-4BDE5129C794}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
