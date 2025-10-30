@@ -3,22 +3,25 @@ using MedicalRecordApp.Services;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using MySql.Data.MySqlClient; // Add this
-
 
 namespace MedicalRecordApp.Controllers
 {
     public class LabResultController
     {
+        private readonly string _connectionString;
+
+        public LabResultController(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
         public List<LabResult> GetLabResultsByVisitId(int visitId)
         {
             List<LabResult> labResults = new List<LabResult>();
 
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
@@ -59,7 +62,7 @@ namespace MedicalRecordApp.Controllers
 
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
@@ -101,7 +104,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand("SELECT * FROM lab_results WHERE id = @id", conn);
@@ -138,7 +141,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd;
@@ -180,7 +183,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand("DELETE FROM lab_results WHERE id = @id", conn);
@@ -200,7 +203,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand("DELETE FROM lab_results WHERE visit_id = @visitId", conn);
@@ -222,7 +225,7 @@ namespace MedicalRecordApp.Controllers
 
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
@@ -257,7 +260,7 @@ namespace MedicalRecordApp.Controllers
 
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
@@ -299,7 +302,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM lab_results WHERE visit_id = @visitId", conn);
@@ -318,7 +321,7 @@ namespace MedicalRecordApp.Controllers
         {
             try
             {
-                using (MySqlConnection conn = ServicesRepository.GetConnection())
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(
